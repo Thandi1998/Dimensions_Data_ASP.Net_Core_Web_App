@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Dimensions_Data.Models.EmployeeBasicInfo> 
+@{
+    ViewData["Title"] = "employeeBasicinfo";
+}
+
+<div class="row justify-content-around">
+    <div><h1>Employee Basic Information</h1></div>
+    <a asp-action="AddEmployeeBasicInfo" asp-controller="EditDelete" class="btn btn-info btn-sm">Add</a>
+</div>
+<div class="container p-3 text-white">
+
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-bordered table-striped" style="width:100%;height:100px; border:hidden">
+            <thead>
+                <tr>
+                    <th>
+                        Employee Number
+                    </th>
+                    <th>
+                        Attrition
+                    </th>
+                    <th>Bussiness travel</th>
+                    <th>Daily Rate</th>
+                    <th>Distance From Home</th>
+                    <th>Environment Satisfaction</th>
+                    <th>Hourly Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model)
+                {
+                    <tr>
+                        <td width="20%">@obj.EmployeeNumber</td>
+                        <td width="30%">@obj.Attrition</td>
+                        <td width="30%">@obj.BusinessTravel</td>
+                        <td width="30%">@obj.DailyRate</td>
+                        <td width="30%">@obj.DistanceFromHome</td>
+                        <td width="30%">@obj.EnvironmentSatisfaction</td>
+                        <td width="30%">@obj.HourlyRate</td>
+                        <td class="text-center">
+                            <div class="w-75 btn-group" role="group">
+                                <a asp-controller="EditDelete" asp-route-Id="@obj.EmployeeNumber" asp-action="EditEmployeeBasicInfo" class="btn btn-primary mx-2">
+                                    <i class="fas fa-edit"></i>
+                                    Edit
+                                </a>
+                                <a asp-controller="EditDelete" asp-route-Id="@obj.EmployeeNumber" asp-action="DeleteEmployeeBasicInfo" class="btn btn-danger mx-2">
+                                    <i class="far fa-trash-alt"></i>
+                                    Delete
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p> No Information.</p>
+    }
+
+</div>
+
+
+

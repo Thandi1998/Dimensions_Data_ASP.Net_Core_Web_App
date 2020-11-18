@@ -1,0 +1,75 @@
+﻿@model Dimensions_Data.Models.EmployeePersonal
+@{
+    ViewData["Title"] = "DeleteEmployeePersonalInfo";
+}
+
+<h1>DeleteEmployeePersonalInfo</h1>
+<form method="post" asp-action="DeleteEmployeePersonalInfo">
+    @if (Model.EmployeeNumber != 0)
+    {
+        <input asp-for="EmployeeNumber" hidden />
+    }
+    <div class="border p-3">
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Age"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Age" class="form-control" />
+                        <span asp-validation-for="Age" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Gender"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Gender" class="form-control" />
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="MaritalStatus"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="MaritalStatus" class="form-control" />
+                        <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Over18"></label>
+                    </div>
+                    <div class="col-8">
+                        <textarea asp-for="Over18" class="form-control summernote"></textarea>
+                        <span asp-validation-for="Over18" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-8 offset-4 row">
+
+                        <div class="col">
+                            @if (Model.EmployeeNumber != 0)
+                            {
+                                //update
+                                <input type="submit" class="btn btn-danger w-100" value="Delete" />
+                            }
+                        </div>
+                        <div class="col">
+                            <a asp-action="employeePersonalinfor" asp-controller="Dashboard" class="btn btn-success w-100"><i class="fas fa-sign-out-alt"></i> Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>

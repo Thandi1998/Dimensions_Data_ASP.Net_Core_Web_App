@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    
+}
+@model Dimensions_Data.Models.LoginInformation
+
+    <div style="background-color:aquamarine" class="w-100 h-80 container m-50 p-50 pt-75">
+        <div class="text-center modal-header">
+            <h1 class="display-4">Welcome</h1>
+        </div>
+        <div class="container text-capitalize h-100 justify-content-center pt-75 modal-body">
+            <div>
+                <form method="post" asp-action="Login">
+                    <div class="row">
+                        <label>Email</label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="row">
+                        <label>Password</label>
+                        <input asp-for="Password" class="form-control" type="password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="row" style="margin-top:15px">
+                        <input type="submit" class="btn btn-secondary w-10" value="Login" />
+                    </div>
+                </form>
+
+
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <p>Not Registered? Create Account <a asp-action="createAccount">Here</a></p>
+        </div>
+
+    </div>

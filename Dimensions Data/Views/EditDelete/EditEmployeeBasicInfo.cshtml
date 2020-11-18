@@ -1,0 +1,98 @@
+﻿@model Dimensions_Data.Models.EmployeeBasicInfo
+@{
+    ViewData["Title"] = "EditEmployeeBasicInfo";
+}
+
+<h1>Edit Employee Basic Information</h1>
+
+<form method="post">
+    @if (Model.EmployeeNumber != 0)
+    {
+        <input asp-for="EmployeeNumber" hidden />
+    }
+    <div class="border p-3">
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Attrition"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Attrition" class="form-control" />
+                        <span asp-validation-for="Attrition" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="BusinessTravel"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="BusinessTravel" class="form-control" />
+                        <span asp-validation-for="BusinessTravel" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="DailyRate"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="DailyRate" class="form-control" />
+                        <span asp-validation-for="DailyRate" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="DistanceFromHome"></label>
+                    </div>
+                    <div class="col-8">
+                        <textarea asp-for="DistanceFromHome" class="form-control summernote"></textarea>
+                        <span asp-validation-for="DistanceFromHome" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="EnvironmentSatisfaction"></label>
+                    </div>
+                    <div class="col-8">
+                        <textarea asp-for="EnvironmentSatisfaction" class="form-control summernote"></textarea>
+                        <span asp-validation-for="EnvironmentSatisfaction" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="HourlyRate"></label>
+                    </div>
+                    <div class="col-8">
+                        <textarea asp-for="HourlyRate" class="form-control summernote"></textarea>
+                        <span asp-validation-for="HourlyRate" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-4 row">
+
+                        <div class="col">
+                            @if (Model.EmployeeNumber != 0)
+                            {
+                                //update
+                                <input type="submit" class="btn btn-info w-100" value="Update" />
+                            }
+
+                        </div>
+                        <div class="col">
+                            <a asp-action="employeeBasicinfo" asp-controller="Dashboard" class="btn btn-success w-100"><i class="fas fa-sign-out-alt"></i> Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+
