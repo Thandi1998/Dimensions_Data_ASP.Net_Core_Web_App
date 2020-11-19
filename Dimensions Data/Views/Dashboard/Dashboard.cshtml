@@ -2,28 +2,29 @@
 @{
     ViewData["Title"] = "Index";
 }
-    <div class="container p-15" style="background-color:dimgrey">
-        <div class="form-group row">
-            <div class="col-8 offset-4 row">
+    <div>
+       
+        <div class="container p-15 justify-content-center" style="background-color:dimgrey">
+            <div class="form-group row">
+                <div class="col-8 offset-4 row">
 
-                <div class="col text-white">
-                    <h1>Dashboard</h1>
-                </div>
-                <div class="col">
-                    <a asp-action="Index" asp-controller="Home" class="btn btn-primary btn-sm"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                    <div class="col text-white">
+                        <h1>Dashboard</h1>
+                    </div>
+
                 </div>
             </div>
-        </div>
 
-        <div class="container mb-5">
-            <div class="row justify-content-center bg-light">
-                <a style="margin:15px" asp-action="employeePerfomance" class="btn btn-outline-secondary btn-block btn-lg">View Employee Perfomance</a>
-                <a style="margin:15px" asp-action="employeePersonalinfor" class="btn btn-outline-secondary btn-block btn-lg">View Employee Pesonal information</a>
-                <a style="margin:15px" asp-action="employeeBasicinfo" class="btn btn-outline-secondary btn-block btn-lg">View Employee Basic information</a>
-                <a style="margin:15px" asp-action="employeeWorkInfo" class="btn btn-outline-secondary btn-block btn-lg">View Employee Work information</a>
-                <a style="margin:15px" asp-action="employeeDepartments" class="btn btn-outline-secondary btn-block btn-lg">View Employee Departments And Education</a>
+            <div class="container mb-5">
+                <div class="row justify-content-center bg-light">
+                    <a style="margin:15px" asp-action="employeePerfomance" class="btn btn-outline-secondary btn-block btn-lg">View Employee Perfomance</a>
+                    <a style="margin:15px" asp-action="employeePersonalinfor" class="btn btn-outline-secondary btn-block btn-lg">View Employee Pesonal information</a>
+                    <a style="margin:15px" asp-action="employeeBasicinfo" class="btn btn-outline-secondary btn-block btn-lg">View Employee Basic information</a>
+                    <a style="margin:15px" asp-action="employeeWorkInfo" class="btn btn-outline-secondary btn-block btn-lg">View Employee Work information</a>
+                    <a style="margin:15px" asp-action="employeeDepartments" class="btn btn-outline-secondary btn-block btn-lg">View Employee Departments And Education</a>
 
+                </div>
             </div>
-        </div>
 
+        </div>
     </div>

@@ -1,0 +1,49 @@
+﻿@model Dimensions_Data.Models.LoginInformation
+@{
+    ViewData["Title"] = "LoginAuth";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="/css/open-iconic-bootstrap.css" rel="stylesheet">
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body class="text-center p-3  text-white" style="background-image:url(/backgroundlogin.jpeg);background-size:cover;background-repeat:no-repeat">
+    <div>
+        <div class="container bg-dark jumbotron vertical-center mt-25 pl-10 pr-10">
+            <div class="text-center">
+                <h1 class="font-weight-bold text-white">Welcome</h1>
+                <p class="text-white">To Dimensions Data</p>
+            </div>
+            <div class="justify-content-center">
+                <form method="post" asp-action="Login">
+                    <div class="row">
+                        <label class="text-white">Email</label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="row">
+                        <label class="text-white">Password</label>
+                        <input asp-for="Password" class="form-control" type="password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="row" style="margin-top:15px">
+                        <input type="submit" class="btn btn-secondary w-10" value="Login" />
+                    </div>
+                </form>
+
+
+            </div>
+            <div class="text-white">
+                <p>Not Registered? Create Account <a asp-action="createAccount" class="btn btn-info">Here</a></p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -41,7 +41,7 @@ namespace Dimensions_Data
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            if (env.IsProduction())
             {
                 app.UseDeveloperExceptionPage();
             }
@@ -57,13 +57,13 @@ namespace Dimensions_Data
             app.UseRouting();
             app.UseSession();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=LoginAuth}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

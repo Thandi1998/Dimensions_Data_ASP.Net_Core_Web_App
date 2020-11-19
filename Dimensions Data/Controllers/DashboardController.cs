@@ -12,6 +12,7 @@ namespace Dimensions_Data.Controllers
         private readonly DimensionsDataProjectContext db = new DimensionsDataProjectContext();
         public IActionResult Dashboard()
         {
+            
             return View();
         }
 

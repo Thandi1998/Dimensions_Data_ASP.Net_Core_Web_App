@@ -28,7 +28,13 @@ namespace Dimensions_Data.Controllers
         public IActionResult Index()
         {
             return View();
-            log.loggingSuccess = false;
+            
+        }
+
+        public IActionResult LoginAuth()
+        {
+            return View();
+
         }
 
 
@@ -57,7 +63,7 @@ namespace Dimensions_Data.Controllers
             if (ModelState.IsValid) {
                 db.LoginInformations.Add(created);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("LoginAuth");
             }
 
             return View(created);
